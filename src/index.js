@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
+// import "./index.css";
 
 const pizzaData = [
   {
@@ -50,12 +50,35 @@ const pizzaData = [
 function App() {
   return (
     <div>
-      <h1>Hello, React!</h1>
+      <Header />
+      <Menu />
+      <Footer />
+    </div>
+  );
+}
+
+function Header() {
+  return <h1>Fast React Pizza Co.</h1>;
+}
+
+function Menu() {
+  return (
+    <div>
+      <h2>Our menu</h2>
+      <Pizza />
       <Pizza />
       <Pizza />
       <Pizza />
     </div>
   );
+}
+
+function Footer() {
+  return (
+    <footer>{new Date().toLocaleTimeString()}. We're currently open!</footer>
+  );
+
+  //   return React.createElement("footer", null, "We're currently open!");
 }
 
 // Never nest your components but always declare them in the top level
@@ -64,7 +87,7 @@ function Pizza() {
     <div>
       <img src="pizzas/spinaci.jpg" alt="Pizza spinaci" />
       <h2>Pizza Spinaci</h2>
-      <p>Tomato, mozarella, spinach, and ricotta cheese</p>;
+      <p>Tomato, mozarella, spinach, and ricotta cheese</p>
     </div>
   );
 }
